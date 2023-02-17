@@ -35,6 +35,9 @@ body{
     flex-wrap: wrap;
 }
 .username-box{
+    display: flex;
+    justify-content: center;
+    align-items: center;
     width:450px;
     height:500px;
     background-color: white;
@@ -47,4 +50,16 @@ body{
     background-color: white;
     margin: 2%;
     flex-shrink: 0;
+}
+.username-box-elements{
+    width: 80%;
+    height: 80%;
+}
+.shrink-logo{
+    width: 36%;
+    height: 9%;
+}
+.username-form{
+    border-bottom: 3px;
+    color: blue;
 }
