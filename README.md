@@ -1,2 +1,2 @@
 # CNS
-Computer Network Security project
+This is the official repository for our Computer Network Security project!
