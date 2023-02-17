@@ -6,24 +6,45 @@ body{
     overflow: hidden;
 }
 .imgbox {
-    display: grid;
-    height: 100%;
-    width: 100%
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    position: fixed; 
+    top: -50%; 
+    left: -50%; 
+    width: 200%; 
+    height: 200%;
 }
-.center-fit {
-    width: 100%;
-    height: 100%;
+.center-fit {  
+    position: absolute; 
+    top: 0; 
+    left: 0; 
+    right: 0; 
+    bottom: 0; 
+    margin: auto; 
+    min-width: 50%;
+    min-height: 50%;
 }
 .username-feild{
     display: flex;
-    width: 100%;
-    height: 100%;
+    width: 10%;
+    height: 25%;
     justify-content: center;
     align-items: center;
     position: absolute;
+    flex-wrap: wrap;
 }
 .username-box{
     width:450px;
-    height:600px;
+    height:500px;
     background-color: white;
+    margin: 2%;
+    flex-shrink: 0;
+}
+.signin-options-box{
+    width:450px;
+    height:55px;
+    background-color: white;
+    margin: 2%;
+    flex-shrink: 0;
 }
