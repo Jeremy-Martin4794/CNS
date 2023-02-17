@@ -1,0 +1,29 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+body{
+    overflow: hidden;
+}
+.imgbox {
+    display: grid;
+    height: 100%;
+    width: 100%
+}
+.center-fit {
+    width: 100%;
+    height: 100%;
+}
+.username-feild{
+    display: flex;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+}
+.username-box{
+    width:450px;
+    height:600px;
+    background-color: white;
+}
