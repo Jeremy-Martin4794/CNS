@@ -26,11 +26,11 @@ html {
     top: 50%;
     left: 50%;
     width: 450px;
-    height: 500px;
-    transform: translate(-50%, -50%);
+    height: 515px;
+    transform: translate(-50%, -60%);
     background: rgba(255,255,255,1);
     box-sizing: border-box;
-    box-shadow: 0 15px 25px rgba(0,0,0,.6);
+    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.089);
   }
 
   .login-padding{
@@ -81,6 +81,11 @@ html {
     margin-bottom: 10px;
   }
 
+  .align-button{
+    display: flex;
+    justify-content: flex-end;
+  }
+
   .button {
     border-radius: 0%;
     background-color: 0067B8;
@@ -97,7 +102,7 @@ html {
   .login-box-footer{
     background-color: rgb(242,242,242);
     width: 100%;
-    height: 40%;
+    height: 36%;
   }
 
   .login-padding-footer{
@@ -105,6 +110,7 @@ html {
     padding-left: 40px;
     padding-right: 40px;
     padding-bottom: 20px;
+    font-size: 15px;
   }
 
   .link{
@@ -116,4 +122,63 @@ html {
   .link:hover{
     text-decoration: underline;
     color: #000000;
+  }
+
+  .signin-options{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    background-color: white;
+    width: 450px;
+    height: 50px;
+    transform: translate(-50%, 450%);
+    box-sizing: border-box;
+    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.089);
+  }
+
+  .signin-options:hover{
+    background-color: rgb(242,242,242);
+    cursor: pointer;
+  }
+
+  .svg{
+    margin: 15px;
+    margin-left: 50px;
+    width: 5%;
+    transform: scale(-1, 1);
+  }
+
+  .bottom-div{
+    width: 100%;
+    height: 2.1%;
+    background-color: black;
+    opacity: .6;
+    position: fixed;
+    bottom: 0;
+    display: flex;
+    justify-content: flex-end;
+    align-content: space-between;
+    align-items: center;
+  }
+
+  .link-bottom-div{
+    text-decoration: none;
+    color: white;
+    font-size: 12px;
+    margin-right: 20px;
+  }
+
+  .link-bottom-div:hover{
+    text-decoration: underline;
+  }
+
+  .align-dots{
+    transform: translate(0%, -15%);
+  }
+
+  .link-bottom-div-dots{
+    text-decoration: none;
+    color: white;
+    font-size: 20px;
+    margin-right: 20px;
   }
