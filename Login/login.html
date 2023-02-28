@@ -5,6 +5,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
 </head>
 <body>
+
     <div class="imgopacity"></div> 
     <section>
 
@@ -12,25 +13,31 @@
         <div class="login-box">
             <div class="login-padding">
                 <img class="logo-img my-3" src="KentStateLogo.png" href="#" style="max-height: 80px; max-width: 150px">
-                <h4>Sign in</h4>
-                <form>
+                <div id="usernameDIV">
+                    <h4>Sign in</h4>
+                    <form>
 
-                <div class="user-box">
-                    <input class="input" type="text" name="" required="" placeholder="KSU Email Address, e.g. username@kent.edu">
-                </div>
+                    <div class="user-box">
+                        <input id = "email-box" class="input" type="text" name="" required="" placeholder="KSU Email Address, e.g. username@kent.edu">
+                    </div>
 
-                <div class="link-padding">
-                    <a class="link" href="">Can’t access your account?</a>
-                </div>
+                    <div class="link-padding">
+                        <a class="link" href="">Can’t access your account?</a>
+                    </div>
 
-                <div class="align-button">
-                    <button type="button" class="button">Next</button>
+                    <div class="align-button">
+                        <!--Giving button animation-->
+                        <button onclick="toPassword()" type="button" class="button">Next</button>
+                    </div>
+                    </form>
                 </div>
-                </form>
             </div>
+            
 
             <!-- links and text at the bottom of login box -->
-            <div class="login-box-footer">
+            <div id="login-footer-DIV">
+                <div class="login-box-footer">
+                
                 <div class="login-padding-footer">
                     <p>
                         If this is your first time logging in, please visit               
@@ -44,8 +51,10 @@
                         <br>
                         to chat with the Helpdesk.
                     </p>
-                </div>              
-            </div>
+                </div>   
+                         
+                </div>
+            </div>  
         </div>
     </section>
 
@@ -68,4 +77,52 @@
         </div>
     </section>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+
+
+    <script>
+        //const delaySlide = setTimeout(slide, 100);
+
+        //declaring global variables equal to all elements in login-padding class
+        var user = document.getElementById("usernameDIV").querySelectorAll("*");
+        var foot = document.getElementById("login-footer-DIV").querySelectorAll("*");
+
+        //function for button to enter password
+        function toPassword() {
+
+            for (let i = 0; i < user.length; i++) {
+                user[i].style.animation = "rightToLeft 0.4s";
+            }
+            for (let i = 0; i < foot.length; i++) {
+                foot[i].style.animation = "rightToLeft 0.4s";
+            }
+
+            const Timeout = setTimeout(Vanish, 350);
+
+            const next = setTimeout(nextPage, 500);
+        }
+        //function for making elements in login-box disappear
+        function Vanish() {
+	        for (let i = 0; i < user.length; i++) {
+  	            user[i].style.display = "none";
+            }
+            
+            for (let i = 0; i < foot.length; i++) {
+  	            foot[i].style.display = "none";
+            }
+            
+        }
+        //function for opening password page
+        function nextPage() {
+            window.open("login-pass.html", "_self");
+        }
+        //function for animating element in login-box
+        function slide() {
+            for (let i = 0; i < user.length; i++) {
+                user[i].style.animation = "slideIn 0.4s";
+            }
+            for (let i = 0; i < foot.length; i++) {
+                foot[i].style.animation = "slideIn 0.4s";
+            }
+        }
+    </script>
 </body>

@@ -31,10 +31,14 @@ html {
     background: rgba(255,255,255,1);
     box-sizing: border-box;
     box-shadow: 0 15px 25px rgba(0, 0, 0, 0.089);
+    /*Adding overflow*/
+    overflow: hidden;
   }
 
   .login-padding{
     padding: 40px;
+    /*Giving elements relative position*/
+    position: relative;
   }
 
   .login-box-borders{
@@ -68,8 +72,6 @@ html {
     left: 0;
     padding: 10px 0;
     font-size: 16px;
-    color: #000000;
-    pointer-events: none;
   }
   
   .input:focus{
@@ -103,6 +105,8 @@ html {
     background-color: rgb(242,242,242);
     width: 100%;
     height: 36%;
+    /*Adding overflow*/
+    overflow: hidden;
   }
 
   .login-padding-footer{
@@ -111,6 +115,8 @@ html {
     padding-right: 40px;
     padding-bottom: 20px;
     font-size: 15px;
+    /*Giving elements relative position*/
+    position: relative;
   }
 
   .link{
@@ -181,4 +187,40 @@ html {
     color: white;
     font-size: 20px;
     margin-right: 20px;
+  }
+
+
+  /*Adding CSS for login-box animation*/
+  .rightToLeft {
+    animation-name: rightToLeft;
+    animation-duration: 1s;
+  }
+  @keyframes rightToLeft {
+    from {right: 0px;}
+    to {right: 200px;}
+    from {opacity: 1}
+    to {opacity: 0}
+  }
+
+  .leftToRight {
+    animation-name: leftToRight;
+    animation-duration: 1s;
+  }
+  @keyframes leftToRight {
+    from {left: 0px;}
+    to {left: 200px;}
+    from {opacity: 1}
+    to {opacity: 0}
+  }
+
+  .slideIn {
+    animation-name: slideIn;
+    animation-delay: 5s;
+    animation-duration: 1s;
+  }
+  @keyframes slideIn {
+    from {left: 1000px;}
+    to {left: 0px;}
+    from {opacity: 0}
+    to {opacity: 1}
   }

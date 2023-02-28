@@ -1,0 +1,134 @@
+<title>Sign in to your account</title>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=.8">
+    <link rel="stylesheet" href="login.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+</head>
+<body onload="slide()">
+
+    <div class="imgopacity"></div> 
+    <section>
+
+        <!-- password form and sign in button -->
+        <div class="login-box">
+            <div class="login-padding">
+                <img class="logo-img" src="KentStateLogo.png" href="#" style="max-height: 80px; max-width: 123.6px">
+                <div id="passwordDIV">
+                    <div style="height: 24px; background: #fff; margin-top: 16px; margin-bottom: -4px;">
+                        <img style="vertical-align: middle; float: left; cursor: pointer;" src="arrow_left.svg" onclick="toUsername()">
+                        <p id ="userEmail" style="line-height: 20px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; float: left; font-size: .9375rem; font-weight: 400">email</p>
+                    </div>
+                    <br>
+                    <!--<h4 style="height: -20px;">Enter Password</h4>-->
+                    <form>
+                    <h4 style="float: left; margin-top: -13px;">Enter Password</h4>
+                    <div class="user-box">
+                        <input id = "pass-box" class="input" type="password" name="" required="" placeholder="Password">
+                    </div>
+
+                    <div class="link-padding">
+                        <a class="link" href="">Forgot my password</a>
+                    </div>
+
+                    <div class="align-button">
+                        <!--Giving button animation-->
+                        <button type="button" class="button" onclick="window.location.href = '/CNS/mSurvey.html'">Sign in</button>
+                    </div>
+                    </form>
+                </div>
+            </div>
+            
+
+            <!-- links and text at the bottom of login box -->
+            <div id="login-footer-DIV">
+                <div class="login-box-footer">
+                
+                <div class="login-padding-footer">
+                    <p>
+                        If this is your first time logging in, please visit               
+                        <a class="link" href="">welcome.kent.edu</a>
+                    </p>
+                    <p>
+                        Forgot your <a class="link" href="">username</a> or <a class="link" href="">password</a>?
+                    </p>
+                    <p>
+                        If you need assistance, please visit <a class="link" href="">support.kent.edu</a>
+                        <br>
+                        to chat with the Helpdesk.
+                    </p>
+                </div>   
+                         
+                </div>
+            </div>  
+        </div>
+    </section>
+
+    <!-- signin options page element -->
+    <section>
+        <div class="signin-options">
+            <img class="svg" src = "key-svgrepo-com.svg" alt="My Happy SVG"/>
+            Sign-in options
+        </div>
+    </section>
+
+    <!-- terms of service bar at the very bottom of the page -->
+    <section>
+        <div class="bottom-div">
+            <a class="link-bottom-div" href="">Terms of use</a>
+            <a class="link-bottom-div" href="">Privacy & cookies</a>
+            <div class="align-dots">
+                <a class="link-bottom-div-dots" href="">. . .</a>
+            </div>
+        </div>
+    </section>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+
+
+    <script>
+        //declaring global variables equal to all elements in login-padding class
+        var pass = document.getElementById("passwordDIV").querySelectorAll("*");
+        var foot = document.getElementById("login-footer-DIV").querySelectorAll("*");
+
+        //Adding javascript for button to enter password
+        function toUsername() {
+
+            //setting variable equal to all elements in login-padding class
+            //var user = document.getElementById("passwordDIV").querySelectorAll("*");
+            //var foot = document.getElementById("login-footer-DIV").querySelectorAll("*");
+
+            for (let i = 0; i < pass.length; i++) {
+                pass[i].style.animation = "leftToRight 0.4s";
+            }
+            for (let i = 0; i < foot.length; i++) {
+                foot[i].style.animation = "leftToRight 0.4s";
+            }
+            //Brief timeout
+            const Timeout = setTimeout(Vanish, 350, pass, foot);
+
+            const next = setTimeout(backPage, 500);
+        }
+        function slide() {
+            for (let i = 0; i < pass.length; i++) {
+                pass[i].style.animation = "slideIn 0.4s";
+            }
+            for (let i = 0; i < foot.length; i++) {
+                foot[i].style.animation = "slideIn 0.4s";
+            }
+        }
+
+        function Vanish(x, y) {
+	        for (let i = 0; i < pass.length; i++) {
+  	            pass[i].style.display = "none";
+            }
+            for (let i = 0; i < foot.length; i++) {
+  	            foot[i].style.display = "none";
+            }
+        }
+        function backPage() {
+            window.open("login.html", "_self");
+        }
+        function toSurvey() {
+            window.open("/CNS/mSurvey.html", "_self")
+        }
+    </script>
+</body>
