@@ -1,0 +1,128 @@
+<title>Sign in to your account</title>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=.8">
+    <link rel="stylesheet" href="login.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+</head>
+<body>
+
+    <div class="imgopacity"></div> 
+    <section>
+
+        <!-- username form and next button -->
+        <div class="login-box">
+            <div class="login-padding">
+                <img class="logo-img my-3" src="KentStateLogo.png" href="#" style="max-height: 80px; max-width: 150px">
+                <div id="usernameDIV">
+                    <h4>Sign in</h4>
+                    <form>
+
+                    <div class="user-box">
+                        <input id = "email-box" class="input" type="text" name="" required="" placeholder="KSU Email Address, e.g. username@kent.edu">
+                    </div>
+
+                    <div class="link-padding">
+                        <a class="link" href="">Can’t access your account?</a>
+                    </div>
+
+                    <div class="align-button">
+                        <!--Giving button animation-->
+                        <button onclick="toPassword()" type="button" class="button">Next</button>
+                    </div>
+                    </form>
+                </div>
+            </div>
+            
+
+            <!-- links and text at the bottom of login box -->
+            <div id="login-footer-DIV">
+                <div class="login-box-footer">
+                
+                <div class="login-padding-footer">
+                    <p>
+                        If this is your first time logging in, please visit               
+                        <a class="link" href="">welcome.kent.edu</a>
+                    </p>
+                    <p>
+                        Forgot your <a class="link" href="">username</a> or <a class="link" href="">password</a>?
+                    </p>
+                    <p>
+                        If you need assistance, please visit <a class="link" href="">support.kent.edu</a>
+                        <br>
+                        to chat with the Helpdesk.
+                    </p>
+                </div>   
+                         
+                </div>
+            </div>  
+        </div>
+    </section>
+
+    <!-- signin options page element -->
+    <section>
+        <div class="signin-options">
+            <img class="svg" src = "key-svgrepo-com.svg" alt="My Happy SVG"/>
+            Sign-in options
+        </div>
+    </section>
+
+    <!-- terms of service bar at the very bottom of the page -->
+    <section>
+        <div class="bottom-div">
+            <a class="link-bottom-div" href="">Terms of use</a>
+            <a class="link-bottom-div" href="">Privacy & cookies</a>
+            <div class="align-dots">
+                <a class="link-bottom-div-dots" href="">. . .</a>
+            </div>
+        </div>
+    </section>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+
+
+    <script>
+        //const delaySlide = setTimeout(slide, 100);
+
+        //declaring global variables equal to all elements in login-padding class
+        var user = document.getElementById("usernameDIV").querySelectorAll("*");
+        var foot = document.getElementById("login-footer-DIV").querySelectorAll("*");
+
+        //function for button to enter password
+        function toPassword() {
+
+            for (let i = 0; i < user.length; i++) {
+                user[i].style.animation = "rightToLeft 0.4s";
+            }
+            for (let i = 0; i < foot.length; i++) {
+                foot[i].style.animation = "rightToLeft 0.4s";
+            }
+
+            const Timeout = setTimeout(Vanish, 350);
+
+            const next = setTimeout(nextPage, 500);
+        }
+        //function for making elements in login-box disappear
+        function Vanish() {
+	        for (let i = 0; i < user.length; i++) {
+  	            user[i].style.display = "none";
+            }
+            
+            for (let i = 0; i < foot.length; i++) {
+  	            foot[i].style.display = "none";
+            }
+            
+        }
+        //function for opening password page
+        function nextPage() {
+            window.open("login-pass.html", "_self");
+        }
+        //function for animating element in login-box
+        function slide() {
+            for (let i = 0; i < user.length; i++) {
+                user[i].style.animation = "slideIn 0.4s";
+            }
+            for (let i = 0; i < foot.length; i++) {
+                foot[i].style.animation = "slideIn 0.4s";
+            }
+        }
+    </script>
+</body>

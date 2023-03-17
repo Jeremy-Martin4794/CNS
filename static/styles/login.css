@@ -1,0 +1,225 @@
+html {
+    height: 100%;
+  }
+  body {
+    margin:0;
+    padding:0;
+    font-family: sans-serif;
+    background-image: url("illustration_3.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  .login-img{
+    max-height: 10px;
+    max-width: 10px
+  }
+  .imgopacity{
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    position: absolute;
+    opacity: .55;
+} 
+
+  .login-box {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 450px;
+    height: 515px;
+    transform: translate(-50%, -60%);
+    background: rgba(255,255,255,1);
+    box-sizing: border-box;
+    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.089);
+    /*Adding overflow*/
+    overflow: hidden;
+  }
+
+  .login-padding{
+    padding: 40px;
+    /*Giving elements relative position*/
+    position: relative;
+  }
+
+  .login-box-borders{
+    top: 50%;
+    left: 50%;
+  }
+  
+  .login-box h2 {
+    margin: 0 0 30px;
+    padding: 0;
+    color: #000000;
+    text-align: center;
+  }
+  
+  .login-box .user-box {
+    position: relative;
+  }
+  
+  .login-box .user-box input {
+    width: 100%;
+    padding: 10px 0;
+    font-size: 16px;
+    color: #000000;
+    border: none;
+    border-bottom: 1px solid #000000;
+
+  }
+  .login-box .user-box label {
+    position: absolute;
+    top:0;
+    left: 0;
+    padding: 10px 0;
+    font-size: 16px;
+  }
+  
+  .input:focus{
+    outline: none;
+  }
+
+  .link-padding{
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+
+  .align-button{
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  .button {
+    border-radius: 0%;
+    background-color: 0067B8;
+    border: none;
+    color: white;
+    justify-content: end;
+    padding: 5px 40px 5px 40px;
+  }
+
+  .button:hover{
+    background-color: rgb(0, 94, 167);
+  }
+
+  .login-box-footer{
+    background-color: rgb(242,242,242);
+    width: 100%;
+    height: 36%;
+    /*Adding overflow*/
+    overflow: hidden;
+  }
+
+  .login-padding-footer{
+    padding-top: 20px;
+    padding-left: 40px;
+    padding-right: 40px;
+    padding-bottom: 20px;
+    font-size: 15px;
+    /*Giving elements relative position*/
+    position: relative;
+  }
+
+  .link{
+    text-decoration: none;
+    color: rgb(74,147,205);
+    font-size: 15px;
+  }
+
+  .link:hover{
+    text-decoration: underline;
+    color: #000000;
+  }
+
+  .signin-options{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    background-color: white;
+    width: 450px;
+    height: 50px;
+    transform: translate(-50%, 450%);
+    box-sizing: border-box;
+    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.089);
+  }
+
+  .signin-options:hover{
+    background-color: rgb(242,242,242);
+    cursor: pointer;
+  }
+
+  .svg{
+    margin: 15px;
+    margin-left: 50px;
+    width: 5%;
+    transform: scale(-1, 1);
+  }
+
+  .bottom-div{
+    width: 100%;
+    height: 2.1%;
+    background-color: rgb(0,0,0,.6);
+    position: fixed;
+    bottom: 0;
+    display: flex;
+    justify-content: flex-end;
+    align-content: space-between;
+    align-items: center;
+  }
+
+  .link-bottom-div{
+    text-decoration: none;
+    color: white;
+    font-size: 12px;
+    margin-right: 20px;
+  }
+
+  .link-bottom-div:hover{
+    text-decoration: underline;
+  }
+
+  .align-dots{
+    transform: translate(0%, -15%);
+  }
+
+  .link-bottom-div-dots{
+    text-decoration: none;
+    color: white;
+    font-size: 20px;
+    margin-right: 20px;
+  }
+
+
+  /*Adding CSS for login-box animation*/
+  .rightToLeft {
+    animation-name: rightToLeft;
+    animation-duration: 1s;
+  }
+  @keyframes rightToLeft {
+    from {right: 0px;}
+    to {right: 200px;}
+    from {opacity: 1}
+    to {opacity: 0}
+  }
+
+  .leftToRight {
+    animation-name: leftToRight;
+    animation-duration: 1s;
+  }
+  @keyframes leftToRight {
+    from {left: 0px;}
+    to {left: 200px;}
+    from {opacity: 1}
+    to {opacity: 0}
+  }
+
+  .slideIn {
+    animation-name: slideIn;
+    animation-delay: 5s;
+    animation-duration: 1s;
+  }
+  @keyframes slideIn {
+    from {left: 1000px;}
+    to {left: 0px;}
+    from {opacity: 0}
+    to {opacity: 1}
+  }
