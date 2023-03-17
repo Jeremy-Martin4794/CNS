@@ -3,6 +3,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=.8">
     <link rel="stylesheet" href="login.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/login.css') }}">
 </head>
 <body onload="slide()">
 
@@ -12,10 +13,10 @@
         <!-- password form and sign in button -->
         <div class="login-box">
             <div class="login-padding">
-                <img class="logo-img" src="KentStateLogo.png" href="#" style="max-height: 80px; max-width: 123.6px">
+                <img class="logo-img" src="{{ url_for('static',filename='images/KentStateLogo.png') }}" href="#" style="max-height: 80px; max-width: 123.6px">
                 <div id="passwordDIV">
                     <div style="height: 24px; background: #fff; margin-top: 16px; margin-bottom: -4px;">
-                        <img style="vertical-align: middle; float: left; cursor: pointer;" src="arrow_left.svg" onclick="toUsername()">
+                        <img style="vertical-align: middle; float: left; cursor: pointer;" src="{{ url_for('static',filename='images/arrow_left.svg') }}" onclick="toUsername()">
                         <p id ="userEmail" style="line-height: 20px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; float: left; font-size: .9375rem; font-weight: 400">email</p>
                     </div>
                     <br>
@@ -32,7 +33,7 @@
 
                     <div class="align-button">
                         <!--Giving button animation-->
-                        <button type="button" class="button" onclick="window.location.href = '../mySurvey.html'">Sign in</button>
+                        <button type="button" class="button" onclick="toSurvey()">Sign in</button>
                     </div>
                     </form>
                 </div>
@@ -66,7 +67,7 @@
     <!-- signin options page element -->
     <section>
         <div class="signin-options">
-            <img class="svg" src = "key-svgrepo-com.svg" alt="My Happy SVG"/>
+            <img class="svg" src = "{{ url_for('static',filename='images/signin-options_key.svg') }}" alt="My Happy SVG"/>
             Sign-in options
         </div>
     </section>
@@ -125,10 +126,10 @@
             }
         }
         function backPage() {
-            window.open("login.html", "_self");
+            window.open("{{ url_for('login') }}", "_self");
         }
         function toSurvey() {
-            window.open("../mySurvey.html", "_self");
+            window.open("{{ url_for('survey') }}", "_self");
         }
     </script>
 </body>

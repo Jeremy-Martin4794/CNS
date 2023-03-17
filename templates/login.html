@@ -3,6 +3,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=.8">
     <link rel="stylesheet" href="login.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/login.css') }}">
 </head>
 <body>
 
@@ -12,7 +13,7 @@
         <!-- username form and next button -->
         <div class="login-box">
             <div class="login-padding">
-                <img class="logo-img my-3" src="KentStateLogo.png" href="#" style="max-height: 80px; max-width: 150px">
+                <img class="logo-img my-3" src="{{ url_for('static',filename='images/KentStateLogo.png') }}" href="#" style="max-height: 80px; max-width: 150px">
                 <div id="usernameDIV">
                     <h4>Sign in</h4>
                     <form>
@@ -61,7 +62,7 @@
     <!-- signin options page element -->
     <section>
         <div class="signin-options">
-            <img class="svg" src = "key-svgrepo-com.svg" alt="My Happy SVG"/>
+            <img class="svg" src = "{{ url_for('static',filename='images/signin-options_key.svg') }}" alt="My Happy SVG"/>
             Sign-in options
         </div>
     </section>
@@ -113,7 +114,7 @@
         }
         //function for opening password page
         function nextPage() {
-            window.open("login-pass.html", "_self");
+            window.open("{{ url_for('login_pass') }}", "_self");
         }
         //function for animating element in login-box
         function slide() {
