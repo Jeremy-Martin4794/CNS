@@ -1,0 +1,9 @@
+<body onload = "toSuccess()" ></body>
+<script>
+    function toSuccess() {
+      const next = setTimeout(success, 2000);
+    }
+    function success() {
+      window.open("{{ url_for('success') }}", "_self");
+    }
+</script>

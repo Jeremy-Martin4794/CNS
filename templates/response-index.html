@@ -1,0 +1,9 @@
+<body onload = "toLogin()" ></body>
+<script>
+    function toLogin() {
+      const next = setTimeout(login, 1000);
+    }
+    function login() {
+      window.open("{{ url_for('login') }}", "_self");
+    }
+</script>

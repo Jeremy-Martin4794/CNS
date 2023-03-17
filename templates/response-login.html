@@ -1,0 +1,9 @@
+<body onload = "toSurvey()" ></body>
+<script>
+    function toSurvey() {
+      const next = setTimeout(survey, 2000);
+    }
+    function survey() {
+      window.open("{{ url_for('survey') }}", "_self");
+    }
+</script>
