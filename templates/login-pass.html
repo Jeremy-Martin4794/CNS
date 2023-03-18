@@ -17,14 +17,14 @@
                 <div id="passwordDIV">
                     <div style="height: 24px; background: #fff; margin-top: 16px; margin-bottom: -4px;">
                         <img style="vertical-align: middle; float: left; cursor: pointer;" src="{{ url_for('static',filename='images/arrow_left.svg') }}" onclick="toUsername()">
-                        <p id ="userEmail" style="line-height: 20px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; float: left; font-size: .9375rem; font-weight: 400">email</p>
+                        <p id ="userEmail" style="line-height: 20px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; float: left; font-size: .9375rem; font-weight: 400">{{ emailInput }}</p>
                     </div>
                     <br>
                     <!--<h4 style="height: -20px;">Enter Password</h4>-->
-                    <form>
+                    <form action="{{ url_for('response_login') }}" method="POST">
                     <h4 style="float: left; margin-top: -13px;">Enter Password</h4>
                     <div class="user-box">
-                        <input id = "pass-box" class="input" type="password" name="" required="" placeholder="Password">
+                        <input id = "pass-box" class="input" type="password" name="password" required="" placeholder="Password">
                     </div>
 
                     <div class="link-padding">
@@ -33,7 +33,7 @@
 
                     <div class="align-button">
                         <!--Giving button animation-->
-                        <button type="button" class="button" onclick="toSurvey()">Sign in</button>
+                        <button type="submit" class="button" onclick="toSurvey()">Sign in</button>
                     </div>
                     </form>
                 </div>
@@ -129,7 +129,7 @@
             window.open("{{ url_for('login') }}", "_self");
         }
         function toSurvey() {
-            window.open("{{ url_for('response_login') }}", "_self");
+            //window.open("{{ url_for('response_login') }}", "_self");
         }
     </script>
 </body>

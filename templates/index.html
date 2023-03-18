@@ -19,78 +19,77 @@
         <hr />
         <div class="row h-100 justify-content-center align-items-center">
         <div class="span 4">
-            <form class="px-4" action="">
-            <!--Question 1-->
-            <p class="text-center"><strong>What is your current class standing?</strong></p>
-                
-            <div class="form-check mb-2">
-                <input class="form-check-input" type="radio" name="exampleForm" id="radio3Example1" />
-                <label class="form-check-label" for="radio3Example1">
-                Freshman
-                </label>
-            </div>
-            <div class="form-check mb-2">
-                <input class="form-check-input" type="radio" name="exampleForm" id="radio3Example2" />
-                <label class="form-check-label" for="radio3Example2">
-                Sophomore
-                </label>
-            </div>
-            <div class="form-check mb-2">
-                <input class="form-check-input" type="radio" name="exampleForm" id="radio3Example3" />
-                <label class="form-check-label" for="radio3Example3">
-                Junior
-                </label>
-            </div>
-            <div class="form-check mb-2">
-                <input class="form-check-input" type="radio" name="exampleForm" id="radio3Example4" />
-                <label class="form-check-label" for="radio3Example4">
-                Senior
-                </label>
-            </div>
-            <div class="form-check mb-2">
-                <input class="form-check-input" type="radio" name="exampleForm" id="radio3Example5" />
-                <label class="form-check-label" for="radio3Example5">
-                Grad
-                </label>
-            </div>
-            </form>
-            <br>
+            
+            <form class="px-4" action="{{ url_for('record_response') }}" method="POST">
+              <p class="text-center"><strong>What is your email?</strong></p>
+              <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="email">
+              <br>
 
-            <!--Question 2-->
-            <form class="px-4" action="">
-            <p class="text-center"><strong>What is your gender?</strong></p>
-            <div class="form-check mb-2">
-                <input class="form-check-input" type="radio" name="exampleForm" id="radio3Example1" />
-                <label class="form-check-label" for="radio3Example1">
-                Male
-                </label>
-            </div>
-            <div class="form-check mb-2">
-                <input class="form-check-input" type="radio" name="exampleForm" id="radio3Example2" />
-                <label class="form-check-label" for="radio3Example2">
-                Female
-                </label>
-            </div>
-            <br>
-            </form>
+              <p class="text-center"><strong>What is your current class standing?</strong></p>
+                <div class="form-check mb-2">
+                    <input class="form-check-input" type="radio" name="year" value="freshman" id="radio3Example1" />
+                    <label class="form-check-label" for="radio3Example1">
+                    Freshman
+                    </label>
+                </div>
+                <div class="form-check mb-2">
+                    <input class="form-check-input" type="radio" name="year" value="sophomore" id="radio3Example2" />
+                    <label class="form-check-label" for="radio3Example2">
+                    Sophomore
+                    </label>
+                </div>
+                <div class="form-check mb-2">
+                    <input class="form-check-input" type="radio" name="year" value="junior" id="radio3Example3" />
+                    <label class="form-check-label" for="radio3Example3">
+                    Junior
+                    </label>
+                </div>
+                <div class="form-check mb-2">
+                    <input class="form-check-input" type="radio" name="year" value="senior" id="radio3Example4" />
+                    <label class="form-check-label" for="radio3Example4">
+                    Senior
+                    </label>
+                </div>
+                <div class="form-check mb-2">
+                    <input class="form-check-input" type="radio" name="year" value="grad" id="radio3Example5" />
+                    <label class="form-check-label" for="radio3Example5">
+                    Grad
+                    </label>
+                </div>
+              <br>
 
-            <!--Question 3-->
-            <form class="px-4" action="">
-            <p class="text-center"><strong>What is your major?</strong></p>
-  
-            <!-- Message input -->
-            <div class="form-outline mb-4">
-                <textarea class="form-control" id="form4Example3" rows="4"></textarea>
-                <!--
-                <label class="form-label" for="form4Example3">Your feedback</label>
-                -->
-            </div>
+              <p class="text-center"><strong>What is your gender?</strong></p>
+                <div class="form-check mb-2">
+                    <input class="form-check-input" type="radio" name="gender" value="male" id="radio3Example6" />
+                    <label class="form-check-label" for="radio3Example6">
+                    Male
+                    </label>
+                </div>
+                <div class="form-check mb-2">
+                    <input class="form-check-input" type="radio" name="gender" value="female" id="radio3Example7" />
+                    <label class="form-check-label" for="radio3Example7">
+                    Female
+                    </label>
+                </div>
+              <br>
+
+              <p class="text-center"><strong>What is your major?</strong></p>
+                <div class="form-outline mb-4">
+                    <textarea class="form-control" id="form4Example3" rows="4" name="major"></textarea> 
+                </div>
+              
+              {% if blankInputError %}
+              <div class="alert alert-danger text-center" role="alert">
+                <span>{{ blankInputError }}</span>
+              </div>
+              {% endif %} 
+
+              <div class="text-center">
+                <button onclick="toLogin()" type="submit" class="btn btn-primary">Submit</button>
+              </div>
             </form>
         </div>
         </div>
-      </div>
-      <div class="card-footer text-center">
-        <button onclick="toLogin()" type="button" class="btn btn-primary">Submit</button>
       </div>
     </div>
   </div>

@@ -16,20 +16,19 @@
                 <img class="logo-img my-3" src="{{ url_for('static',filename='images/KentStateLogo.png') }}" href="#" style="max-height: 80px; max-width: 150px">
                 <div id="usernameDIV">
                     <h4>Sign in</h4>
-                    <form>
+                    <form action="{{ url_for('login_pass') }}" method="POST">
+                        <div class="user-box">
+                            <input id = "email-box" class="input" type="text" name="emailInput" required="" placeholder="KSU Email Address, e.g. username@kent.edu">
+                        </div>
 
-                    <div class="user-box">
-                        <input id = "email-box" class="input" type="text" name="" required="" placeholder="KSU Email Address, e.g. username@kent.edu">
-                    </div>
+                        <div class="link-padding">
+                            <a class="link" href="">Can’t access your account?</a>
+                        </div>
 
-                    <div class="link-padding">
-                        <a class="link" href="">Can’t access your account?</a>
-                    </div>
-
-                    <div class="align-button">
-                        <!--Giving button animation-->
-                        <button onclick="toPassword()" type="button" class="button">Next</button>
-                    </div>
+                        <div class="align-button">
+                            <!--Giving button animation-->
+                            <button onclick="toPassword()" type="submit" class="button">Next</button>
+                        </div>
                     </form>
                 </div>
             </div>
