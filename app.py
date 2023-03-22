@@ -1,3 +1,4 @@
+import hashlib
 from flask import Flask, render_template, request, redirect, session, url_for
 from flask_sqlalchemy import SQLAlchemy
 
@@ -6,6 +7,13 @@ app.secret_key = "test"
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///users.db'
 db = SQLAlchemy(app)
 
+def hash(password):
+    word = password
+    password_bytes = word.encode('utf-8')
+    sha256 = hashlib.sha256()
+    sha256.update(password_bytes)
+    word = sha256.hexdigest()
+    return word
 
 # db tables
 class Users(db.Model):
@@ -41,7 +49,8 @@ def record_response():
             session["userEmail"] = email
 
             # add to database class
-            newUser = Users(email=email, year=year, gender=gender, major=major)
+            mail = hash(email)
+            newUser = Users(email=mail, year=year, gender=gender, major=major)
 
             # push and commit to database
             try:
@@ -77,7 +86,7 @@ def response_login():
         if demographicEmail == loginInputEmail:
             users = Users.query.all()
             for user in users:
-                if user.email == loginInputEmail:
+                if user.email == hash(loginInputEmail):
                     user.signedIn = True
             try:
                 db.session.commit()
